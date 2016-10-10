@@ -739,6 +739,11 @@ class TelegramBot extends EventEmitter {
     form.score = score;
     return this._request('setGameScore', { form: form });
   }
+
+  getGameHighScores(userId, form = {}) {
+    form.user_id = userId;
+    return this._request('getGameHighScores', { form: form });
+  }
 }
 
 module.exports = TelegramBot;
